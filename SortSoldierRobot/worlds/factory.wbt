@@ -1,0 +1,293 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/ThreadMetalPlate.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Roughcast.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "../protos/Youbot.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/PlasticFruitBox.proto"
+EXTERNPROTO "../protos/Can.proto"
+EXTERNPROTO "../protos/BeerBottle.proto"
+
+WorldInfo {
+  contactProperties [
+    ContactProperties {
+      material1 "InteriorWheelMat"
+      material2 "floor"
+      coulombFriction [
+        0.8, 0.2
+      ]
+      frictionRotation 0.785398 0
+      forceDependentSlip [
+        0.001, 0.001
+      ]
+    }
+    ContactProperties {
+      material1 "ExteriorWheelMat"
+      material2 "floor"
+      coulombFriction [
+        0.8, 0.2
+      ]
+      frictionRotation -0.785398 0
+      forceDependentSlip [
+        0.001, 0.001
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.46801859120649003 0.02929097372031313 -0.8832330593584053 3.0311446120719387
+  position 9.394450682810211 0.4741046772444306 13.950996094875803
+}
+DEF BEER1 Solid {
+  translation -1.29633 -3.24661 1.08358e-13
+  rotation 0 0 1 -0.523595307179586
+  children [
+    BeerBottle {
+      translation 0 0 -0.0004516706917574536
+      rotation 0 0 0.9999999999999999 1.8326000000000002
+    }
+  ]
+  name "beer1"
+  boundingObject Pose {
+    translation 0 0 0.12
+    children [
+      Cylinder {
+        height 0.24
+        radius 0.03
+      }
+    ]
+  }
+  physics Physics {
+    mass 0.4
+  }
+}
+DEF BEER1 Solid {
+  translation -0.756338 -2.09675 9.94759e-14
+  rotation 0 0 1 -0.523595307179586
+  children [
+    BeerBottle {
+      translation 0 0 -0.0004516706917574536
+      rotation 0 0 0.9999999999999999 1.8326000000000002
+    }
+  ]
+  name "beer1(1)"
+  boundingObject Pose {
+    translation 0 0 0.12
+    children [
+      Cylinder {
+        height 0.24
+        radius 0.03
+      }
+    ]
+  }
+  physics Physics {
+    mass 0.4
+  }
+}
+DEF BEER1 Solid {
+  translation -2.7156 1.85821 1.10134e-13
+  rotation 0 0 -1 0.5235953071795861
+  children [
+    BeerBottle {
+      translation 0 0 -0.0004516706917574536
+      rotation 0 0 0.9999999999999999 1.8326000000000002
+    }
+  ]
+  name "beer1(2)"
+  boundingObject Pose {
+    translation 0 0 0.12
+    children [
+      Cylinder {
+        height 0.24
+        radius 0.03
+      }
+    ]
+  }
+  physics Physics {
+    mass 0.4
+  }
+}
+DEF CAN1 Solid {
+  translation -0.256229 -0.0163867 2.39807e-14
+  rotation 0 0 -1 -5.307179586466759e-06
+  children [
+    Can {
+      translation -0.001110219426473824 -0.00010434159235563067 0.05935249996253878
+      rotation 0.0010613937025195281 0.25269071573627333 0.9675465237517512 2.5292674603167976e-05
+    }
+  ]
+  name "can1(1)"
+  boundingObject Pose {
+    translation 0 0 0.06
+    children [
+      Cylinder {
+        height 0.12
+        radius 0.03
+      }
+    ]
+  }
+  physics Physics {
+    mass 0.04
+  }
+}
+DEF CAN1 Solid {
+  translation -4.13757 -3.10661 1.11911e-13
+  rotation 0 0 -1 -5.307179586466759e-06
+  children [
+    Can {
+      translation -0.001110219426473824 -0.00010434159235563067 0.05935249996253878
+      rotation 0.0010613937025195281 0.25269071573627333 0.9675465237517512 2.5292674603167976e-05
+    }
+  ]
+  name "can1(2)"
+  boundingObject Pose {
+    translation 0 0 0.06
+    children [
+      Cylinder {
+        height 0.12
+        radius 0.03
+      }
+    ]
+  }
+  physics Physics {
+    mass 0.04
+  }
+}
+TexturedBackground {
+  texture "empty_office"
+}
+PointLight {
+  attenuation 0 0 1
+  intensity 10.8
+  location -4 6 5
+  castShadows TRUE
+}
+PointLight {
+  attenuation 0 0 1
+  intensity 9.6
+  location 5 6 5
+}
+Floor {
+  contactMaterial "floor"
+  size 12 10
+  tileSize 1 1
+  appearance ThreadMetalPlate {
+  }
+}
+DEF MY_YOUBOT Youbot {
+  translation -0.340103 2.14611 0.103393
+  rotation 0.0008849925719043415 -0.027423386734540856 -0.9996235164541475 -0.038955307179586285
+  controller "youbotCont"
+  bodySlot [
+    DEF CAMERA Camera {
+      translation 0.25 0 0.05
+      rotation 0 1 0 0
+      recognitionColors [
+        1 0 0
+      ]
+      fieldOfView 1
+      width 640
+      height 640
+      recognition Recognition {
+      }
+    }
+    DistanceSensor {
+      translation 0.2 -0.12 0.05
+      rotation 0 1 0 0
+      name "ds1"
+      lookupTable [
+        0 1000 0
+        0.1 800 0
+        0.2 600 0
+        0.4 300 0
+        0.8 100 0
+        1.2 50 0
+        1.6 25 0
+      ]
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0.2 0.12 0.05
+      name "ds0"
+      lookupTable [
+        0 1000 0
+        0.1 800 0
+        0.2 600 0
+        0.4 300 0
+        0.8 100 0
+        1.2 50 0
+        1.6 25 0
+      ]
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0.2 0 0
+      name "dsm"
+      lookupTable [
+        0 1000 0
+        0.02 900 0
+        0.04 700 0
+        0.06 500 0
+        0.08 350 0
+        0.1 200 0
+        0.2 80 0
+        0.4 40 0
+        0.8 10 0
+      ]
+    }
+  ]
+}
+Wall {
+  translation -0.0193851 4.98365 -1.06581e-14
+  name "wall(1)"
+  size 12 0.2 3
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 5 1.75
+    }
+  }
+}
+Wall {
+  translation -0.0655092 -5.07727 7.10543e-15
+  name "wall(2)"
+  size 12 0.2 3
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 5 1.75
+    }
+  }
+}
+Wall {
+  translation -5.93865 -0.0435811 -1.26654e-12
+  rotation 0 0 1 1.5708
+  name "wall(3)"
+  size 10 0.2 3
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 4.125 1.725
+    }
+  }
+}
+Wall {
+  translation 5.84711 -0.0298153 7.10543e-15
+  rotation 0 0 1 -1.5708
+  size 10 0.2 3
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 4.125 1.725
+    }
+  }
+}
+PlasticFruitBox {
+  translation -5.39839 1.4616 -4.05009e-13
+  rotation 0 0 1 -1.5707953071795862
+  color 0 1 0
+}
+PlasticFruitBox {
+  name "plastic fruit box(1)"
+  translation -5.44349 -1.66294 1.79413e-13
+  rotation 0 0 1 -1.5707953071795862
+  color 1 0 0
+}
