@@ -1,7 +1,10 @@
 #  Waste Sorting Robot using Kuka YouBot and YOLOv5
 
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.54.0-FF4B4B.svg)](https://streamlit.io/)
+[![Webots](https://img.shields.io/badge/Webots-Robotics%20Simulation-orange.svg)](https://cyberbotics.com/)
+[![YOLOv5](https://img.shields.io/badge/YOLOv5-Object%20Detection-green.svg)](https://github.com/ultralytics/yolov5)
+[![OpenCV](https://img.shields.io/badge/OpenCV-Computer%20Vision-red.svg)](https://opencv.org/)
+
 A university robotics project focused on autonomous object detection, collection, and sorting using a simulated robot in **Webots**.
 
 # Features
